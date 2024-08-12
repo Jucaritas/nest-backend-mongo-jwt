@@ -24,7 +24,7 @@ export class AuthController {
     const user = req['user'] as User;
     const { _id,email,fullName,password,isActive,roles, ...rest } = user;
     return {
-      user: { _id, email, name, isActive, roles },
+      user: { _id, email, fullName, isActive, roles },
       token: this.authService.getJwtToken({ email: user.email })
     }
   }
